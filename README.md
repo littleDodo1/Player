@@ -1,2 +1,1 @@
-﻿# Python
-# Qt
+# Video Player
