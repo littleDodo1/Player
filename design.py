@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\79383\Documents\design.ui'
+# Form implementation generated from reading ui file 'C:\Users\79383\Documents\MyFirstProject\design.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(882, 610)
+        MainWindow.resize(801, 600)
         MainWindow.setStyleSheet("QMainWindow {background: rgb(56, 56, 56)}")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -22,24 +22,21 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.widget = QtWidgets.QWidget(self.centralwidget)
         self.widget.setObjectName("widget")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.widget)
-        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.widget)
+        self.verticalLayout.setObjectName("verticalLayout")
         self.videoWidget = QVideoWidget(self.widget)
-        self.videoWidget.setMinimumSize(QtCore.QSize(400, 200))
+        self.videoWidget.setMinimumSize(QtCore.QSize(400, 450))
         self.videoWidget.setStyleSheet("QVideoWidget {background:rgb(30, 30, 30)}")
-        self.videoWidget.setObjectName("videoPlayer")
-        self.gridLayout_2.addWidget(self.videoWidget, 0, 0, 1, 1)
-        self.widget_3 = QtWidgets.QWidget(self.widget)
-        self.widget_3.setMinimumSize(QtCore.QSize(0, 30))
-        self.widget_3.setMaximumSize(QtCore.QSize(16777215, 70))
-        self.widget_3.setObjectName("widget_3")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget_3)
+        self.videoWidget.setObjectName("videoWidget")
+        self.verticalLayout.addWidget(self.videoWidget)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.playButton = QtWidgets.QPushButton(self.widget_3)
+        self.playButton = QtWidgets.QPushButton(self.widget)
         self.playButton.setMinimumSize(QtCore.QSize(34, 30))
-        self.playButton.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.playButton.setMaximumSize(QtCore.QSize(34, 30))
+        self.playButton.setFocusPolicy(QtCore.Qt.NoFocus)
         self.playButton.setStyleSheet(
-            " QPushButton {\n"
+            "QPushButton {\n"
             "     border: 2px solid #8f8f91;\n"
             "     border-radius: 6px;\n"
             "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -47,7 +44,7 @@ class Ui_MainWindow(object):
             "     min-width: 30px;\n"
             " }\n"
             "\n"
-            " QPushButton:pressed {\n"
+            "QPushButton:pressed {\n"
             "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
             "                                       stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
             " }"
@@ -55,11 +52,12 @@ class Ui_MainWindow(object):
         self.playButton.setText("")
         self.playButton.setObjectName("playButton")
         self.horizontalLayout.addWidget(self.playButton)
-        self.openButton = QtWidgets.QPushButton(self.widget_3)
+        self.openButton = QtWidgets.QPushButton(self.widget)
         self.openButton.setMinimumSize(QtCore.QSize(44, 30))
-        self.openButton.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.openButton.setMaximumSize(QtCore.QSize(44, 30))
+        self.openButton.setFocusPolicy(QtCore.Qt.NoFocus)
         self.openButton.setStyleSheet(
-            " QPushButton {\n"
+            "QPushButton {\n"
             "     border: 2px solid #8f8f91;\n"
             "     border-radius: 6px;\n"
             "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -67,61 +65,62 @@ class Ui_MainWindow(object):
             "     min-width: 40px;\n"
             " }\n"
             "\n"
-            " QPushButton:pressed {\n"
+            "QPushButton:pressed {\n"
             "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
             "                                       stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
             " }"
         )
         self.openButton.setObjectName("openButton")
         self.horizontalLayout.addWidget(self.openButton)
-        self.controlSlider = QtWidgets.QSlider(self.widget_3)
-        self.controlSlider.setMaximumSize(QtCore.QSize(16777215, 32))
+        self.controlSlider = QtWidgets.QSlider(self.widget)
+        self.controlSlider.setMinimumSize(QtCore.QSize(80, 0))
         self.controlSlider.setStyleSheet(
             "QSlider::groove:horizontal {\n"
             "     border: 1px solid #999999;\n"
-            "     height: 8px; /* по умолчанию бороздка расширяется до размеров ползунка. задав высоту она принимает фиксированный размер */\n"
+            "     height: 8px;\n"
             "     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);\n"
             "     margin: 2px 0;\n"
             " }\n"
             "\n"
-            " QSlider::handle:horizontal {\n"
+            "QSlider::handle:horizontal {\n"
             "     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);\n"
             "     border: 1px solid #5c5c5c;\n"
             "     width: 18px;\n"
-            "     margin: -2px 0; /* рукоятка располагается по умолчанию в прямоугольнике содержимого бороздки. Расширяется наружу от бороздки */\n"
+            "     margin: -2px 0;\n"
             "     border-radius: 3px;\n"
             " }"
         )
         self.controlSlider.setOrientation(QtCore.Qt.Horizontal)
         self.controlSlider.setObjectName("controlSlider")
         self.horizontalLayout.addWidget(self.controlSlider)
-        self.soundSlider = QtWidgets.QSlider(self.widget_3)
-        self.soundSlider.setMaximumSize(QtCore.QSize(16777215, 84))
+        self.soundSlider = QtWidgets.QSlider(self.widget)
+        self.soundSlider.setMinimumSize(QtCore.QSize(0, 30))
+        self.soundSlider.setMaximumSize(QtCore.QSize(16777215, 55))
         self.soundSlider.setStyleSheet(
-            "QSlider::groove:verticall {\n"
-            "     border: 1px solid #999998;\n"
-            "     height: 50px; /* по умолчанию бороздка расширяется до размеров ползунка. задав высоту она принимает фиксированный размер */\n"
-            "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);\n"
-            "     margin: 1px;\n"
+            "QSlider::groove:vertical {\n"
+            "     border: 1px solid #999999;\n"
+            "     height: 50px;\n"
+            "     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);\n"
+            "     margin: 1px 0;\n"
             " }\n"
             "\n"
-            " QSlider::handle:vertical {\n"
+            "QSlider::handle:vertical {\n"
             "     background: qlineargradient(x1:0, y1:0, x2:4, y2:4, stop:0 #b4b4b4, stop:1 #8f8f8f);\n"
-            "     border: 5px solid #5c5c5c;\n"
+            "     border: 4px solid #5c5c5c;\n"
             "     width: 18px;\n"
-            "     margin: -2px 0; /* рукоятка располагается по умолчанию в прямоугольнике содержимого бороздки. Расширяется наружу от бороздки */\n"
+            "     margin: -2px 0;\n"
             "     border-radius: 2px;\n"
-            "    \n"
             " }"
         )
         self.soundSlider.setOrientation(QtCore.Qt.Vertical)
         self.soundSlider.setObjectName("soundSlider")
         self.horizontalLayout.addWidget(self.soundSlider)
-        self.speedButton = QtWidgets.QPushButton(self.widget_3)
+        self.speedButton = QtWidgets.QPushButton(self.widget)
         self.speedButton.setMinimumSize(QtCore.QSize(44, 30))
-        self.speedButton.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.speedButton.setMaximumSize(QtCore.QSize(44, 30))
+        self.speedButton.setFocusPolicy(QtCore.Qt.NoFocus)
         self.speedButton.setStyleSheet(
-            " QPushButton {\n"
+            "QPushButton {\n"
             "     border: 2px solid #8f8f91;\n"
             "     border-radius: 6px;\n"
             "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -129,18 +128,48 @@ class Ui_MainWindow(object):
             "     min-width: 40px;\n"
             " }\n"
             "\n"
-            " QPushButton:pressed {\n"
+            "QPushButton:pressed {\n"
             "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
             "                                       stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
             " }"
         )
         self.speedButton.setObjectName("speedButton")
         self.horizontalLayout.addWidget(self.speedButton)
-        self.gridLayout_2.addWidget(self.widget_3, 1, 0, 1, 1)
+        self.likeButton = QtWidgets.QPushButton(self.widget)
+        self.likeButton.setMinimumSize(QtCore.QSize(34, 30))
+        self.likeButton.setMaximumSize(QtCore.QSize(44, 30))
+        self.likeButton.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.likeButton.setStyleSheet(
+            "QPushButton {\n" "     background: rgba(0, 0, 0, 0);" " }"
+        )
+        self.likeButton.setText("")
+        self.likeButton.setObjectName("likeButton")
+        self.horizontalLayout.addWidget(self.likeButton)
+        self.showButton = QtWidgets.QPushButton(self.widget)
+        self.showButton.setMinimumSize(QtCore.QSize(34, 30))
+        self.showButton.setMaximumSize(QtCore.QSize(44, 30))
+        self.showButton.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.showButton.setStyleSheet(
+            "QPushButton {\n"
+            "     border: 2px solid #8f8f91;\n"
+            "     border-radius: 6px;\n"
+            "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+            "                                       stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+            "     min-width: 30px;\n"
+            " }\n"
+            "\n"
+            "QPushButton:pressed {\n"
+            "     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+            "                                       stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+            " }"
+        )
+        self.showButton.setObjectName("showButton")
+        self.horizontalLayout.addWidget(self.showButton)
+        self.verticalLayout.addLayout(self.horizontalLayout)
         self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 882, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 801, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -152,9 +181,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Abobuds"))
         self.openButton.setText(_translate("MainWindow", "Open"))
-        self.speedButton.setText(_translate("MainWindow", "1.0"))
+        self.speedButton.setText(_translate("MainWindow", "1"))
+        self.showButton.setText(_translate("MainWindow", "Show"))
+        print('')
 
 
 from PyQt5.QtMultimediaWidgets import QVideoWidget
